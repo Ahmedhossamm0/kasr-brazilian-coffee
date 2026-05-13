@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // ============================================================
       // CONTACT FORM EMAIL — Edit the email address below
       // ============================================================
-      const mailtoLink = 'mailto:info@kasrbraziliancoffee.com?subject=' + subject + '&body=' + body;
+      const mailtoLink = 'mailto:home@kasrbraziliancoffee.com?subject=' + subject + '&body=' + body;
       window.location.href = mailtoLink;
 
       // Show a brief confirmation

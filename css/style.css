@@ -323,10 +323,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 
+/* Hero background photograph — sits beneath the pattern + overlay */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.55;
+  filter: saturate(1.1) contrast(1.05);
+}
+
 /* Palace-inspired geometric background pattern */
 .hero-bg-pattern {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background-image:
     /* Radial ornament top-right */
     radial-gradient(circle at 85% 20%, rgba(201,151,58,0.08) 0%, transparent 50%),
@@ -380,10 +393,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(26,10,0,0.95) 0%,
-    rgba(26,10,0,0.7) 50%,
+    rgba(26,10,0,0.92) 0%,
+    rgba(26,10,0,0.55) 50%,
     rgba(44,18,6,0.85) 100%
   );
 }
@@ -547,6 +561,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
   background: var(--brown-deep);
   border: 1px solid var(--border-gold);
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.about-img-frame:hover .about-img {
+  transform: scale(1.04);
 }
 
 .about-placeholder-img {
@@ -830,11 +856,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .product-img {
-  height: 180px;
+  height: 220px;
   background: linear-gradient(135deg, var(--brown-deep) 0%, var(--espresso) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.08);
 }
 
 .product-img-placeholder {
